@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlgmtcau57j4d"]
+
+[ext_resource type="Texture2D" uid="uid://cmsunywnrf3cr" path="res://icon.svg" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://btweib6imoxml" path="res://scenes/character_body_2d.gd" id="1_yqjtg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lgqqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgqqw"]
+radius = 61.400326
+
+[node name="Game" type="Node2D" unique_id=484210836]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=463523267]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2117028588]
+shape = SubResource("WorldBoundaryShape2D_lgqqw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1724995467]
+position = Vector2(2.645, -13.43)
+scale = Vector2(0.185, 0.185)
+script = ExtResource("1_yqjtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2062818511]
+texture = ExtResource("1_uwrxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=82935557]
+shape = SubResource("CircleShape2D_lgqqw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=587310281]
